@@ -1,0 +1,11 @@
+Package: gammaR
+Type: Package
+Title: Useful for plotting in Gamma Poisson models
+Version: 0.1.0
+Author: Carter Allen
+Maintainer: Carter Allen <carter.allen12@gmail.com>
+Description: Contains functions for quickly plotting Poissons, Gammas, and Negative Binomials
+License: GNU
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
