@@ -5,7 +5,7 @@
 #' @examples
 #' dgam_plot(2,2)
 
-dgam_plot <- function(alpha,beta,rate = TRUE,by = 0.0025)
+dgam_plot <- function(alpha,beta,rate = TRUE,by = 0.0025,plot_title = "Gamma Density Function")
 {
   if(rate)
   {
@@ -14,8 +14,10 @@ dgam_plot <- function(alpha,beta,rate = TRUE,by = 0.0025)
     p.lambda = dgamma(lambdas,shape = alpha,rate = beta)
     ps.df = as_tibble(cbind(lambdas,p.lambda))
 
-    ggplot(data = ps.df, aes(x = lambdas,y=p.lambda)) +
-      geom_point()
+    ggplot(data = ps.df, aes(x = lambdas,y = p.lambda)) +
+      geom_point() +
+      ggtitle(plot_title) +
+      labs(subtitle = paste("With parameters",alpha,beta))
   }
 
   else
@@ -26,6 +28,8 @@ dgam_plot <- function(alpha,beta,rate = TRUE,by = 0.0025)
     ps.df = as_tibble(cbind(lambdas,p.lambda))
 
     ggplot(data = ps.df, aes(x = lambdas,y = p.lambda)) +
-      geom_point()
+      geom_point() +
+      ggtitle(plot_title) +
+      labs(subtitle = paste("With parameters",alpha,beta))
   }
 }
